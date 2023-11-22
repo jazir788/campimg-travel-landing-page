@@ -18,11 +18,17 @@ const Navbar = () => {
         <Link href="/">
             <Image src="/hilink-logo.svg" alt ="logo" width = {74} height = {29} className="flex-shrink-0" />
         </Link>
-        <ul className={`lg:flex items-center ${isMenuOpen ? 'flex' : 'hidden'} gap-12`}>
+        <ul
+        className={`lg:flex items-center ${
+          isMenuOpen ? "flex" : "hidden"
+        } gap-12 hidden md:flex`}
+      >
             {NAV_LINKS.map((link)=> (
               <Link href={link.href} key={link.key} className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">{link.label}</Link>
             ))}
         </ul>
+
+        
 
         <div className="lg:flexCenter hidden ">
           <Button 
@@ -38,7 +44,7 @@ const Navbar = () => {
             alt="menu"
             width={32}
             height={32}
-            className="inline-block cursor-pointer lg:hidden"
+            className="inline-block cursor-pointer lg:hidden md:hidden"
             onClick={toggleMenu} />
 
     </nav>
